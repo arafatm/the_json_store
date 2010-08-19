@@ -15,7 +15,11 @@
         dataType: 'json',
         success: function(items) {
           $.each(items, function(i, item) {
-            context.log(item.title, '-', item.artist);
+            context.log(i, item.title, '-', item.artist);
+            context.partial('templates/item.template', 
+                            {item: item}, function(rendered) {
+              context.$element().append(rendered);
+            });
           });
         }
       });
