@@ -6,10 +6,19 @@
     // Select root element to act on
     this.element_selector = '#main';    
 
-    // Verify sammy is running
+    // Verify load of json data and log to console
     this.get('#/', function(context) {
-      context.log('Hello World');
+      $.ajax({
+        url: 'data/items.js', 
+        dataType: 'json',
+        success: function(items) {
+          $.each(items, function(i, item) {
+            context.log(item.title, '-', item.artist);
+          });
+        }
+      });
     });
+
 
   });
 
