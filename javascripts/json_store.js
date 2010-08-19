@@ -6,6 +6,8 @@
     // Select root element to act on
     this.element_selector = '#main';    
 
+    this.use(Sammy.Template);
+
     // Verify load of json data and log to console
     this.get('#/', function(context) {
       $.ajax({
