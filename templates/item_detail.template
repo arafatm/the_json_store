@@ -1,4 +1,4 @@
-<div class="item-detail<%= item.id %>">
+<div id="item_<%= item.id %>" class="item-detail">
   <div class="item-image"><img src="<%= item.large_image %>" alt="<%= item.title %>" /></div>
   <div class="item-info">
     <div class="item-artist"><%= item.artist %></div>
