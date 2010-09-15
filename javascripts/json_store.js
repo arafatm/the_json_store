@@ -16,13 +16,17 @@
         success: function(items) {
           $.each(items, function(i, item) {
             context.log(i, item.title, '-', item.artist);
-            context.partial('templates/item.template', 
-                            {item: item}, function(rendered) {
+            context.partial('templates/item.template', {item: item}, 
+                            function(rendered) {
               context.$element().append(rendered);
             });
           });
         }
       });
+    });
+
+    this.get('#/item/:id', function(context) {
+      console.log(this.params['id']);
     });
 
 
