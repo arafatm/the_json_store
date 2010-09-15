@@ -8,5 +8,13 @@
     <div class="back-link"><a href="#/">&laquo; Back to Items</a></div>
   </div>
 </div>
-
-
+<div class="item-form">
+  <form action="#/cart" method="post">
+    <input type="hidden" name="item_id" value="<%= item.id %>" />
+    <p>
+      <label>Quantity:</label>
+      <input type="text" size="2" name="quantity" value="1" />
+    </p>
+    <p><input type="submit" value="Add to Cart" /></p>
+  </form>
+</div>
