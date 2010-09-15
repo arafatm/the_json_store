@@ -35,8 +35,17 @@
           context.items = items;
           console.log("returned " + items.length + " items");
           console.log('context.params[id] = ' + context.params['id']);
-          context.item = context.items[context.params['id']];
-          if (!context.item) { return context.notFound(); }
+          var item_id = -1;
+          for (var i = 0; i < context.items.length; i++) {
+            console.log('context.items[i].id = ' + context.items[i].id);
+            if (context.items[i].id == context.params['id'])  { 
+              item_id = i;
+              break;
+            }
+          }
+          console.log('item_id = ' + item_id);
+          if (item_id == -1) { return context.notFound(); }
+          context.item = context.items[item_id];
           context.partial('templates/item_detail.template');
         }
       });
