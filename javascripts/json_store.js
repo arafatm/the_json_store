@@ -51,6 +51,9 @@
       });
     });
 
+    this.post('#/cart', function(context) {
+      context.log('Hot cart action');
+    });
 
   });
 
