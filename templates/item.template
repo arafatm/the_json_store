@@ -1,6 +1,6 @@
 <div class="item">
   <div class="item-image">
-    <a href="#/item/<%= item.id %>"><img src="<%= item.image %>" alt="<%= item.title %>" /></a>
+    <a href="#/item/<%= item.id %>"><img src="/images/<%= item.image %>" alt="<%= item.title %>" /></a>
   </div>
   <div class="item-artist">
     <a href="#/item/<%= item.id %>">
