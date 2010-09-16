@@ -51,8 +51,16 @@
       });
     });
 
+    var cart = {};
     this.post('#/cart', function(context) {
-      context.log('Hot cart action');
+      context.log('params = ' + this.params);
+      var item_id = this.params['item_id'];
+      if (!cart[item_id]) {
+        // this item is not yet in our cart initialize its quantity with 0
+        cart[item_id] = 0;
+      }
+      cart[item_id] += parseInt(this.params['quantity']);
+      this.log("The current cart: ", cart);
     });
 
   });
